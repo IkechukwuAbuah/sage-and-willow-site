@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sage and Willow | AI-Powered Legacy Planning for Nigerian Canadians</title>
+    <meta name="description" content="Plan your estate across Canada and Nigeria with AI companions who understand your culture, values, and dual-jurisdiction needs. Meet Sage and Willow today.">
+
+    <!-- Fonts: Fraunces for warmth + DM Sans for clarity -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f6f2',
+                            100: '#e8ebe4',
+                            200: '#d4dac9',
+                            300: '#b5c0a4',
+                            400: '#9CAF88',
+                            500: '#7a9362',
+                            600: '#5f754c',
+                            700: '#4b5c3e',
+                            800: '#3e4a34',
+                            900: '#353f2e',
+                        },
+                        willow: {
+                            50: '#faf8f6',
+                            100: '#f2ede8',
+                            200: '#e4dbd0',
+                            300: '#d2c3b1',
+                            400: '#bca68e',
+                            500: '#8B7355',
+                            600: '#7d6449',
+                            700: '#68523d',
+                            800: '#574436',
+                            900: '#4a3b2f',
+                        },
+                        indigo: {
+                            DEFAULT: '#2C3E50',
+                            light: '#34495E',
+                            dark: '#1a252f',
+                        },
+                        cream: '#fdfbf7',
+                        parchment: '#f7f3eb',
+                    },
+                    fontFamily: {
+                        display: ['Fraunces', 'Georgia', 'serif'],
+                        body: ['DM Sans', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base styles */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; }
+
+        /* Adire-inspired pattern (subtle geometric) */
+        .adire-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232C3E50' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .adire-border {
+            background: linear-gradient(90deg,
+                transparent 0%,
+                #2C3E50 10%,
+                transparent 20%,
+                #2C3E50 30%,
+                transparent 40%,
+                #2C3E50 50%,
+                transparent 60%,
+                #2C3E50 70%,
+                transparent 80%,
+                #2C3E50 90%,
+                transparent 100%
+            );
+            height: 2px;
+            opacity: 0.15;
+        }
+
+        /* Organic flowing connection line */
+        .connection-line {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            pointer-events: none;
+        }
+
+        /* Breathing/floating animation for companions */
+        @keyframes breathe {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-8px) scale(1.02); }
+        }
+
+        @keyframes float-sage {
+            0%, 100% { transform: translateY(0) rotate(-1deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+        }
+
+        @keyframes float-willow {
+            0%, 100% { transform: translateY(0) rotate(1deg); }
+            50% { transform: translateY(-10px) rotate(-1deg); }
+        }
+
+        .companion-sage { animation: float-sage 6s ease-in-out infinite; }
+        .companion-willow { animation: float-willow 7s ease-in-out infinite 0.5s; }
+
+        /* Glow effects */
+        .sage-glow {
+            box-shadow: 0 0 60px rgba(156, 175, 136, 0.3),
+                        0 0 100px rgba(156, 175, 136, 0.1);
+        }
+
+        .willow-glow {
+            box-shadow: 0 0 60px rgba(139, 115, 85, 0.3),
+                        0 0 100px rgba(139, 115, 85, 0.1);
+        }
+
+        /* Typewriter effect */
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #2C3E50;
+            animation: typewriter 3s steps(40) 1s forwards,
+                       blink 0.8s step-end infinite;
+        }
+
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Hero entrance */
+        @keyframes hero-fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-animate {
+            animation: hero-fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero-animate-delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .hero-animate-delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .hero-animate-delay-3 { animation-delay: 0.6s; opacity: 0; }
+        .hero-animate-delay-4 { animation-delay: 0.8s; opacity: 0; }
+
+        /* Chat bubble styles */
+        .chat-bubble {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 16px 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .chat-bubble-sage::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            transform: rotate(45deg);
+            border-radius: 3px;
+        }
+
+        .chat-bubble-willow::before {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            transform: rotate(45deg);
+            border-radius: 3px;
+        }
+
+        /* Journey progress line */
+        .journey-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom,
+                #9CAF88 0%,
+                #9CAF88 33%,
+                #8B7355 66%,
+                #2C3E50 100%
+            );
+            transform: translateX(-50%);
+        }
+
+        /* Particle canvas */
+        #particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        /* Memory persistence visual */
+        .memory-node {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse-memory 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-memory {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.3); opacity: 1; }
+        }
+
+        /* Bridge illustration */
+        .bridge-container {
+            position: relative;
+            height: 60px;
+        }
+
+        .bridge-svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Smooth gradient overlays */
+        .gradient-overlay-top {
+            background: linear-gradient(to bottom, #fdfbf7 0%, transparent 100%);
+        }
+
+        .gradient-overlay-bottom {
+            background: linear-gradient(to top, #fdfbf7 0%, transparent 100%);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f7f3eb;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #9CAF88;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7a9362;
+        }
+    </style>
+</head>
+
+<body class="bg-cream text-indigo antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-sage-100/50">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="relative">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-sage-400 to-willow-500 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 3c-4.5 3-7.5 7.5-7.5 12 0 3 2 5 4.5 5s4-2 4-5c0-3-1.5-6-4-9 2.5 3 4 6 4 9 0 3 1.5 5 4 5s4.5-2 4.5-5c0-4.5-3-9-7.5-12z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="font-display text-xl font-semibold text-indigo group-hover:text-sage-600 transition-colors">
+                        Sage & Willow
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#companions" class="text-indigo/70 hover:text-sage-600 transition-colors font-medium">Meet Your Guides</a>
+                    <a href="#how-it-works" class="text-indigo/70 hover:text-sage-600 transition-colors font-medium">How It Works</a>
+                    <a href="#pricing" class="text-indigo/70 hover:text-sage-600 transition-colors font-medium">Pricing</a>
+                    <a href="#waitlist" class="bg-indigo text-white px-5 py-2.5 rounded-full hover:bg-indigo-light transition-colors font-medium">
+                        Join Waitlist
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-sage-50 transition-colors">
+                    <svg class="w-6 h-6 text-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-sage-100">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#companions" class="block text-indigo/70 hover:text-sage-600 font-medium py-2">Meet Your Guides</a>
+                <a href="#how-it-works" class="block text-indigo/70 hover:text-sage-600 font-medium py-2">How It Works</a>
+                <a href="#pricing" class="block text-indigo/70 hover:text-sage-600 font-medium py-2">Pricing</a>
+                <a href="#waitlist" class="block bg-indigo text-white px-5 py-3 rounded-full text-center font-medium mt-4">Join Waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-24 pb-16 px-6 lg:px-8 overflow-hidden adire-pattern">
+        <canvas id="particles-canvas"></canvas>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center max-w-4xl mx-auto pt-12 md:pt-20">
+
+                <!-- Tagline -->
+                <div class="hero-animate hero-animate-delay-1 inline-flex items-center gap-2 bg-sage-100/60 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
+                    <span class="w-2 h-2 bg-sage-500 rounded-full animate-pulse"></span>
+                    <span class="text-sage-700 font-medium text-sm">AI-Powered Legacy Planning</span>
+                </div>
+
+                <!-- Main headline -->
+                <h1 class="hero-animate hero-animate-delay-2 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-indigo leading-tight mb-6">
+                    Your legacy deserves<br>
+                    <span class="bg-gradient-to-r from-sage-500 to-willow-500 bg-clip-text text-transparent">
+                        a conversation
+                    </span>
+                </h1>
+
+                <!-- Subhead -->
+                <p class="hero-animate hero-animate-delay-3 text-lg md:text-xl text-indigo/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Two AI companions who understand your Canadian life and Nigerian roots.
+                    <strong class="text-sage-600">Sage</strong> helps you clarify what matters.
+                    <strong class="text-willow-600">Willow</strong> helps you organize the details.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-animate hero-animate-delay-4 flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                    <a href="#waitlist" class="group bg-indigo text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-indigo/20 hover:shadow-xl hover:shadow-indigo/30 hover:-translate-y-0.5 transition-all">
+                        Start the Conversation
+                        <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                    <a href="#companions" class="border-2 border-willow-300 text-willow-700 px-8 py-4 rounded-full font-semibold text-lg hover:border-willow-400 hover:bg-willow-50 transition-all">
+                        Meet Your Guides
+                    </a>
+                    <a href="https://tally.so/r/NpDZEG" target="_blank" class="text-indigo/70 hover:text-indigo px-4 py-4 font-medium transition-colors underline underline-offset-4">
+                        Take our 3-min survey →
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Companion Avatars & Chat Preview -->
+            <div class="relative max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
+
+                    <!-- Sage -->
+                    <div class="reveal-left flex flex-col items-center md:items-end">
+                        <div class="companion-sage relative mb-4">
+                            <div class="w-28 h-28 md:w-36 md:h-36 rounded-full bg-gradient-to-br from-sage-300 to-sage-500 sage-glow flex items-center justify-center">
+                                <svg class="w-16 h-16 md:w-20 md:h-20 text-white/90" viewBox="0 0 80 80" fill="none">
+                                    <!-- Sage leaf/wisdom symbol -->
+                                    <path d="M40 10 C30 25 25 40 25 55 C25 65 32 72 40 72 C48 72 55 65 55 55 C55 40 50 25 40 10Z" fill="currentColor" opacity="0.3"/>
+                                    <path d="M40 18 C33 30 30 42 30 54 C30 62 35 68 40 68 C45 68 50 62 50 54 C50 42 47 30 40 18Z" fill="currentColor" opacity="0.5"/>
+                                    <circle cx="40" cy="40" r="8" fill="currentColor"/>
+                                    <path d="M40 32 L40 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M34 36 L26 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M46 36 L54 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -bottom-1 -right-1 bg-sage-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                Sage
+                            </div>
+                        </div>
+
+                        <div class="chat-bubble chat-bubble-sage max-w-xs md:max-w-sm text-left">
+                            <p class="text-indigo/80 italic leading-relaxed" id="sage-message">
+                                "Before we discuss the details, let's step back. When you imagine your grandchildren learning about your life—what do you hope they know?"
+                            </p>
+                        </div>
+                        <p class="text-sage-600 font-medium text-sm mt-3">Wisdom • Values • Culture</p>
+                    </div>
+
+                    <!-- Willow -->
+                    <div class="reveal-right flex flex-col items-center md:items-start">
+                        <div class="companion-willow relative mb-4">
+                            <div class="w-28 h-28 md:w-36 md:h-36 rounded-full bg-gradient-to-br from-willow-300 to-willow-500 willow-glow flex items-center justify-center">
+                                <svg class="w-16 h-16 md:w-20 md:h-20 text-white/90" viewBox="0 0 80 80" fill="none">
+                                    <!-- Willow tree/roots symbol -->
+                                    <path d="M40 70 L40 45" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                    <path d="M40 45 C30 40 20 35 15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+                                    <path d="M40 45 C35 38 28 32 22 25" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+                                    <path d="M40 45 C45 38 52 32 58 25" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+                                    <path d="M40 45 C50 40 60 35 65 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+                                    <circle cx="15" cy="18" r="4" fill="currentColor" opacity="0.5"/>
+                                    <circle cx="22" cy="23" r="3" fill="currentColor" opacity="0.6"/>
+                                    <circle cx="58" cy="23" r="3" fill="currentColor" opacity="0.6"/>
+                                    <circle cx="65" cy="18" r="4" fill="currentColor" opacity="0.5"/>
+                                    <ellipse cx="40" cy="72" rx="12" ry="4" fill="currentColor" opacity="0.3"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -bottom-1 -left-1 bg-willow-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                Willow
+                            </div>
+                        </div>
+
+                        <div class="chat-bubble chat-bubble-willow max-w-xs md:max-w-sm text-left">
+                            <p class="text-indigo/80 italic leading-relaxed">
+                                "I see you mentioned property in Lagos. Let's make sure we have the details right. Do you have the certificate of occupancy available?"
+                            </p>
+                        </div>
+                        <p class="text-willow-600 font-medium text-sm mt-3">Organization • Assets • Legal</p>
+                    </div>
+
+                </div>
+
+                <!-- Connecting flow line (SVG) -->
+                <svg class="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-24 opacity-30" viewBox="0 0 200 100">
+                    <defs>
+                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#9CAF88"/>
+                            <stop offset="100%" stop-color="#8B7355"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M 0 50 Q 50 20, 100 50 T 200 50" stroke="url(#lineGradient)" stroke-width="2" fill="none" stroke-dasharray="8 4">
+                        <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="2s" repeatCount="indefinite"/>
+                    </path>
+                </svg>
+            </div>
+
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-indigo/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Problem Statement -->
+    <section class="py-20 md:py-28 bg-indigo text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
+                </pattern>
+                <rect width="100" height="100" fill="url(#grid)"/>
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="text-sage-300">70%</span> of Nigerians die without a will.<br>
+                    <span class="text-willow-300">50%</span> of Canadians are in the same position.
+                </h2>
+                <div class="adire-border max-w-md mx-auto my-8"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal-left">
+                    <p class="text-xl text-white/80 leading-relaxed mb-6">
+                        Estate planning is hard. Cross-border planning is harder. And honestly? It feels like planning for death when what you really want is to <strong class="text-white">protect life</strong>—your family, your assets, your wishes.
+                    </p>
+                    <p class="text-lg text-white/70 leading-relaxed">
+                        You've built a life that bridges two countries. Your property in Lagos. Your home in Toronto. Traditions from your grandparents. Dreams for your grandchildren.
+                    </p>
+                </div>
+
+                <div class="reveal-right">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                        <svg class="w-10 h-10 text-willow-300 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                        </svg>
+                        <p class="text-xl text-white/90 italic leading-relaxed mb-4">
+                            "I kept putting it off. Not because I didn't care, but because every service felt like it was designed for someone else's life."
+                        </p>
+                        <p class="text-white/50 text-sm">— Anonymous survey respondent</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 reveal">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-display font-bold text-sage-300">125K+</div>
+                    <p class="text-white/60 mt-2">Nigerian Canadians</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-display font-bold text-willow-300">30%</div>
+                    <p class="text-white/60 mt-2">Nigerian civil cases are inheritance disputes</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-display font-bold text-sage-300">0</div>
+                    <p class="text-white/60 mt-2">Services built for dual-country diaspora</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-display font-bold text-willow-300">∞</div>
+                    <p class="text-white/60 mt-2">Stories that deserve protection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Your Companions -->
+    <section id="companions" class="py-20 md:py-28 bg-parchment relative">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-indigo mb-4">
+                    Two guides. One conversation.
+                </h2>
+                <p class="text-lg text-indigo/70 max-w-2xl mx-auto">
+                    Sage and Willow aren't forms to fill out or chatbots to interrogate you. They're AI companions—each with their own wisdom—who guide you through legacy planning like wise friends.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+
+                <!-- Sage Card -->
+                <div class="reveal-left group">
+                    <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-sage-200/30 border border-sage-100 hover:shadow-2xl hover:shadow-sage-200/40 transition-all duration-500 hover:-translate-y-1">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div class="companion-sage w-20 h-20 rounded-full bg-gradient-to-br from-sage-300 to-sage-500 sage-glow flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-white/90" viewBox="0 0 80 80" fill="none">
+                                    <path d="M40 10 C30 25 25 40 25 55 C25 65 32 72 40 72 C48 72 55 65 55 55 C55 40 50 25 40 10Z" fill="currentColor" opacity="0.3"/>
+                                    <circle cx="40" cy="40" r="8" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-2xl md:text-3xl font-bold text-sage-700 mb-2">Sage</h3>
+                                <p class="text-sage-600 font-medium">Your guide through what matters</p>
+                            </div>
+                        </div>
+
+                        <p class="text-indigo/70 leading-relaxed mb-6">
+                            Sage doesn't rush. They ask the questions that matter most: What do you want to be remembered for? Who needs protecting? What traditions should live on?
+                        </p>
+
+                        <p class="text-indigo/60 leading-relaxed mb-8">
+                            Sage understands Nigerian family structures, cultural expectations, and the weight of legacy. They help you clarify your values before diving into details.
+                        </p>
+
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-indigo/80">Values and wishes</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-indigo/80">Family dynamics</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                                    </svg>
+                                </div>
+                                <span class="text-indigo/80">Cultural traditions</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-indigo/80">Legacy messages</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-sage-50 rounded-xl p-5 border-l-4 border-sage-400">
+                            <p class="text-sage-800 italic">
+                                "Before we discuss the details, let's step back. When you imagine your grandchildren learning about your life—what do you hope they know?"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Willow Card -->
+                <div class="reveal-right group">
+                    <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-willow-200/30 border border-willow-100 hover:shadow-2xl hover:shadow-willow-200/40 transition-all duration-500 hover:-translate-y-1">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div class="companion-willow w-20 h-20 rounded-full bg-gradient-to-br from-willow-300 to-willow-500 willow-glow flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-white/90" viewBox="0 0 80 80" fill="none">
+                                    <path d="M40 70 L40 45" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                    <path d="M40 45 C30 40 20 35 15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+                                    <path d="M40 45 C50 40 60 35 65 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-2xl md:text-3xl font-bold text-willow-700 mb-2">Willow</h3>
+                                <p class="text-willow-600 font-medium">The one who keeps track of everything</p>
+                            </div>
+                        </div>
+
+                        <p class="text-indigo/70 leading-relaxed mb-6">
+                            Willow is grounded, thorough, and patient. Once you've clarified what matters with Sage, Willow helps you organize the practical details—assets in two countries, documents, digital accounts.
+                        </p>
+
+                        <p class="text-indigo/60 leading-relaxed mb-8">
+                            Willow knows Canadian and Nigerian legal requirements. They help you capture everything so nothing falls through the cracks.
+                        </p>
+
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-willow-100 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-willow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                    </svg>
+                                </div>
+                                <span class="text-indigo/80">Asset inventory (Canada + Nigeria)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-willow-100 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-willow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-indigo/80">Property and investments</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-willow-100 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-willow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-indigo/80">Digital legacy (accounts, passwords)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-willow-100 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-willow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-indigo/80">Legal requirements</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-willow-50 rounded-xl p-5 border-l-4 border-willow-400">
+                            <p class="text-willow-800 italic">
+                                "I see you mentioned property in Lagos. Let's make sure we have the details right. What's the address, and do you have the certificate of occupancy?"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Memory Persists Feature -->
+            <div class="mt-16 reveal">
+                <div class="bg-gradient-to-r from-sage-100 via-parchment to-willow-100 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-full opacity-30">
+                        <svg class="w-full h-full" viewBox="0 0 400 200" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="memoryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#9CAF88"/>
+                                    <stop offset="50%" stop-color="#2C3E50"/>
+                                    <stop offset="100%" stop-color="#8B7355"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Memory connection lines -->
+                            <circle cx="50" cy="100" r="6" fill="#9CAF88" class="memory-node"/>
+                            <circle cx="120" cy="60" r="4" fill="#9CAF88" class="memory-node" style="animation-delay: 0.3s"/>
+                            <circle cx="180" cy="120" r="5" fill="#2C3E50" class="memory-node" style="animation-delay: 0.6s"/>
+                            <circle cx="250" cy="80" r="4" fill="#2C3E50" class="memory-node" style="animation-delay: 0.9s"/>
+                            <circle cx="320" cy="110" r="5" fill="#8B7355" class="memory-node" style="animation-delay: 1.2s"/>
+                            <circle cx="370" cy="70" r="6" fill="#8B7355" class="memory-node" style="animation-delay: 1.5s"/>
+                            <path d="M50 100 L120 60 L180 120 L250 80 L320 110 L370 70" stroke="url(#memoryGrad)" stroke-width="1" fill="none" opacity="0.5"/>
+                        </svg>
+                    </div>
+
+                    <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-2/3">
+                            <h3 class="font-display text-2xl md:text-3xl font-bold text-indigo mb-4">
+                                Memory that persists
+                            </h3>
+                            <p class="text-indigo/70 text-lg leading-relaxed">
+                                Your companions remember your story across sessions. No starting over. No explaining your family tree again. Your context stays with you—because your legacy isn't something you should have to repeat.
+                            </p>
+                        </div>
+                        <div class="md:w-1/3 flex justify-center">
+                            <div class="relative">
+                                <div class="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center">
+                                    <svg class="w-12 h-12 text-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                    </svg>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-sage-400 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 md:py-28 bg-cream relative">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-indigo mb-4">
+                    Planning that fits your life
+                </h2>
+                <p class="text-lg text-indigo/70 max-w-2xl mx-auto">
+                    No overwhelming forms. No legal jargon. Just thoughtful conversations that guide you from values to documents.
+                </p>
+            </div>
+
+            <!-- Journey Steps -->
+            <div class="relative">
+                <!-- Vertical line (desktop) -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-sage-300 via-indigo/30 to-willow-300 -translate-x-1/2"></div>
+
+                <!-- Step 1: Sage -->
+                <div class="relative mb-16 reveal">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                            <div class="inline-flex items-center gap-2 bg-sage-100 px-4 py-1.5 rounded-full mb-4">
+                                <span class="w-2 h-2 bg-sage-500 rounded-full"></span>
+                                <span class="text-sage-700 font-medium text-sm">Step 1</span>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-sage-700 mb-3">Start with Sage</h3>
+                            <p class="text-indigo/70 leading-relaxed">
+                                No forms. No pressure. Just reflective questions about what matters to you. Take 10 minutes or an hour—Sage works at your pace. This is where you clarify your values, family dynamics, and cultural wishes.
+                            </p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-sage-400 items-center justify-center shadow-lg shadow-sage-300/50 z-10">
+                            <span class="text-white font-bold">1</span>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="bg-white rounded-2xl p-6 shadow-lg border border-sage-100">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="text-sage-600 font-medium">Conversation with Sage</span>
+                                </div>
+                                <div class="space-y-3 text-sm text-indigo/60">
+                                    <p>→ What do you want to be remembered for?</p>
+                                    <p>→ Who in your family needs protecting?</p>
+                                    <p>→ What cultural traditions matter most?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Willow -->
+                <div class="relative mb-16 reveal" style="transition-delay: 0.1s">
+                    <div class="md:flex items-center flex-row-reverse">
+                        <div class="md:w-1/2 md:pl-12 mb-6 md:mb-0">
+                            <div class="inline-flex items-center gap-2 bg-willow-100 px-4 py-1.5 rounded-full mb-4">
+                                <span class="w-2 h-2 bg-willow-500 rounded-full"></span>
+                                <span class="text-willow-700 font-medium text-sm">Step 2</span>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-willow-700 mb-3">Organize with Willow</h3>
+                            <p class="text-indigo/70 leading-relaxed">
+                                Once you know what matters, Willow helps you capture the details. Assets in Canada and Nigeria. Bank accounts. Property. Digital accounts. Willow is thorough, patient, and never forgets a detail.
+                            </p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-willow-400 items-center justify-center shadow-lg shadow-willow-300/50 z-10">
+                            <span class="text-white font-bold">2</span>
+                        </div>
+                        <div class="md:w-1/2 md:pr-12 md:text-right">
+                            <div class="bg-white rounded-2xl p-6 shadow-lg border border-willow-100">
+                                <div class="flex items-center gap-3 mb-4 md:flex-row-reverse">
+                                    <div class="w-10 h-10 rounded-full bg-willow-100 flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-willow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                                        </svg>
+                                    </div>
+                                    <span class="text-willow-600 font-medium">Organizing with Willow</span>
+                                </div>
+                                <div class="space-y-3 text-sm text-indigo/60 md:text-right">
+                                    <p>→ Property in Toronto, Land in Lagos</p>
+                                    <p>→ TD Bank, GTBank, Crypto wallets</p>
+                                    <p>→ Digital subscriptions & passwords</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Documents -->
+                <div class="relative mb-16 reveal" style="transition-delay: 0.2s">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                            <div class="inline-flex items-center gap-2 bg-indigo/10 px-4 py-1.5 rounded-full mb-4">
+                                <span class="w-2 h-2 bg-indigo rounded-full"></span>
+                                <span class="text-indigo font-medium text-sm">Step 3</span>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-indigo mb-3">Your wishes become documents</h3>
+                            <p class="text-indigo/70 leading-relaxed">
+                                Together, Sage and Willow organize everything into a structured plan. But we don't stop there—licensed professionals review your documents to ensure they're legally sound.
+                            </p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-indigo items-center justify-center shadow-lg shadow-indigo/30 z-10">
+                            <span class="text-white font-bold">3</span>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="bg-white rounded-2xl p-6 shadow-lg border border-indigo/10">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-full bg-indigo/10 flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="text-indigo font-medium">Human-Reviewed Documents</span>
+                                </div>
+                                <div class="space-y-3 text-sm text-indigo/60">
+                                    <p>→ AI drafts your plan</p>
+                                    <p>→ Licensed professionals review</p>
+                                    <p>→ You approve the final version</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Update -->
+                <div class="relative reveal" style="transition-delay: 0.3s">
+                    <div class="md:flex items-center flex-row-reverse">
+                        <div class="md:w-1/2 md:pl-12 mb-6 md:mb-0">
+                            <div class="inline-flex items-center gap-2 bg-gradient-to-r from-sage-100 to-willow-100 px-4 py-1.5 rounded-full mb-4">
+                                <span class="w-2 h-2 bg-gradient-to-r from-sage-500 to-willow-500 rounded-full"></span>
+                                <span class="text-indigo font-medium text-sm">Step 4</span>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-indigo mb-3">Update anytime</h3>
+                            <p class="text-indigo/70 leading-relaxed">
+                                Life changes. Your plan can too. Return whenever you need to—your companions remember your story and pick up right where you left off.
+                            </p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-sage-400 to-willow-400 items-center justify-center shadow-lg z-10">
+                            <span class="text-white font-bold">∞</span>
+                        </div>
+                        <div class="md:w-1/2 md:pr-12 md:text-right">
+                            <div class="bg-gradient-to-br from-sage-50 to-willow-50 rounded-2xl p-6 border border-sage-100">
+                                <div class="flex items-center gap-3 mb-4 md:flex-row-reverse">
+                                    <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                        </svg>
+                                    </div>
+                                    <span class="text-indigo font-medium">Lifetime Updates</span>
+                                </div>
+                                <p class="text-sm text-indigo/60 md:text-right">
+                                    New baby? New property? New wishes? Just return and chat. Your story continues.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Trust & Security -->
+    <section class="py-20 md:py-24 bg-indigo-dark text-white">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+            <div class="text-center mb-12 reveal">
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">
+                    Your legacy is sacred. We treat it that way.
+                </h2>
+                <div class="adire-border max-w-md mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
+                    <div class="w-14 h-14 mx-auto rounded-full bg-sage-500/20 flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-sage-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">256-bit Encryption</h3>
+                    <p class="text-white/60 text-sm">Bank-level security protects your data</p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
+                    <div class="w-14 h-14 mx-auto rounded-full bg-willow-500/20 flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-willow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Canadian Data Residency</h3>
+                    <p class="text-white/60 text-sm">PIPEDA compliant, stored in Canada</p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
+                    <div class="w-14 h-14 mx-auto rounded-full bg-sage-500/20 flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-sage-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Human-Reviewed</h3>
+                    <p class="text-white/60 text-sm">Licensed professionals verify every document</p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
+                    <div class="w-14 h-14 mx-auto rounded-full bg-willow-500/20 flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-willow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">No Data Selling</h3>
+                    <p class="text-white/60 text-sm">We make money by helping you, not selling you</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 md:py-28 bg-parchment">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-indigo mb-4">
+                    Start free. Plan at your pace.
+                </h2>
+                <p class="text-lg text-indigo/70 max-w-2xl mx-auto">
+                    Explore with Sage at no cost. When you're ready for the full journey, choose what fits your needs.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+                <!-- Free Tier -->
+                <div class="reveal bg-white rounded-3xl p-8 shadow-lg border border-sage-100 hover:shadow-xl transition-shadow" style="transition-delay: 0s">
+                    <div class="mb-6">
+                        <h3 class="font-display text-xl font-bold text-sage-700 mb-2">Exploration</h3>
+                        <div class="text-4xl font-display font-bold text-indigo">Free</div>
+                        <p class="text-indigo/60 text-sm mt-2">No credit card required</p>
+                    </div>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-sage-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">Unlimited conversations with Sage</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-sage-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">Clarify what matters to you</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-sage-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">No commitment</span>
+                        </li>
+                    </ul>
+
+                    <a href="#waitlist" class="block w-full text-center bg-sage-100 text-sage-700 px-6 py-3 rounded-full font-semibold hover:bg-sage-200 transition-colors">
+                        Start Free
+                    </a>
+                </div>
+
+                <!-- Foundation Plan -->
+                <div class="reveal bg-white rounded-3xl p-8 shadow-xl border-2 border-indigo/20 hover:shadow-2xl transition-shadow relative" style="transition-delay: 0.1s">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo text-white text-xs font-bold px-4 py-1 rounded-full">
+                        Most Popular
+                    </div>
+
+                    <div class="mb-6">
+                        <h3 class="font-display text-xl font-bold text-indigo mb-2">Foundation</h3>
+                        <div class="text-4xl font-display font-bold text-indigo">$299</div>
+                        <p class="text-indigo/60 text-sm mt-2">One-time payment</p>
+                    </div>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-indigo mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">Full access to Sage and Willow</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-indigo mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">Complete asset inventory (Canada + Nigeria)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-indigo mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">Digital legacy vault</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-indigo mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">Basic will template</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-indigo mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">PDF export</span>
+                        </li>
+                    </ul>
+
+                    <a href="#waitlist" class="block w-full text-center bg-indigo text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-light transition-colors">
+                        Join Waitlist
+                    </a>
+                </div>
+
+                <!-- Complete Plan -->
+                <div class="reveal bg-gradient-to-br from-willow-50 to-sage-50 rounded-3xl p-8 shadow-lg border border-willow-200 hover:shadow-xl transition-shadow" style="transition-delay: 0.2s">
+                    <div class="mb-6">
+                        <h3 class="font-display text-xl font-bold text-willow-700 mb-2">Complete Legacy</h3>
+                        <div class="text-4xl font-display font-bold text-indigo">$997</div>
+                        <p class="text-indigo/60 text-sm mt-2">One-time payment</p>
+                    </div>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-willow-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">Everything in Foundation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-willow-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">Custom will drafting</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-willow-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">Power of attorney documents</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-willow-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">Human review by licensed professional</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-willow-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">Cultural rites documentation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-willow-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-indigo/70">1 year unlimited updates</span>
+                        </li>
+                    </ul>
+
+                    <a href="#waitlist" class="block w-full text-center bg-willow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-willow-600 transition-colors">
+                        Join Waitlist
+                    </a>
+                </div>
+
+            </div>
+
+            <p class="text-center text-indigo/50 text-sm mt-8">
+                *Pricing is subject to change during early access. Join the waitlist for founding member discounts.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="py-20 md:py-28 bg-gradient-to-br from-sage-500 via-indigo to-willow-500 text-white relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="waitlist-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <circle cx="10" cy="10" r="1" fill="white"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#waitlist-pattern)"/>
+            </svg>
+        </div>
+
+        <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center relative z-10">
+            <div class="reveal">
+                <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                    Be first to meet Sage and Willow
+                </h2>
+                <p class="text-xl text-white/80 mb-10">
+                    We're opening to early adopters soon. Join the waitlist and we'll let you know the moment it's ready.
+                </p>
+
+                <!-- Tally Survey Embed -->
+                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 max-w-lg mx-auto">
+                    <iframe
+                        data-tally-src="https://tally.so/embed/NpDZEG?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                        loading="lazy"
+                        width="100%"
+                        height="400"
+                        frameborder="0"
+                        marginheight="0"
+                        marginwidth="0"
+                        title="Sage and Willow Survey"
+                    ></iframe>
+                    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s)}</script>
+                </div>
+
+                <p class="text-white/60 text-sm mt-6">
+                    Takes 3 minutes. Help us build the right service for you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-dark text-white py-16">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <a href="#" class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-sage-400 to-willow-500 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 3c-4.5 3-7.5 7.5-7.5 12 0 3 2 5 4.5 5s4-2 4-5c0-3-1.5-6-4-9 2.5 3 4 6 4 9 0 3 1.5 5 4 5s4.5-2 4.5-5c0-4.5-3-9-7.5-12z"/>
+                            </svg>
+                        </div>
+                        <span class="font-display text-xl font-semibold">Sage & Willow</span>
+                    </a>
+                    <p class="text-white/60 max-w-sm">
+                        AI-powered legacy planning for Nigerian Canadians. Your wise companions for what matters most.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#companions" class="text-white/60 hover:text-sage-300 transition-colors">Meet Your Guides</a></li>
+                        <li><a href="#how-it-works" class="text-white/60 hover:text-sage-300 transition-colors">How It Works</a></li>
+                        <li><a href="#pricing" class="text-white/60 hover:text-sage-300 transition-colors">Pricing</a></li>
+                        <li><a href="#waitlist" class="text-white/60 hover:text-sage-300 transition-colors">Join Waitlist</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:hello@sageandwillow.com" class="text-white/60 hover:text-sage-300 transition-colors">hello@sageandwillow.com</a></li>
+                        <li class="text-white/40">Toronto, Canada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="adire-border mb-8"></div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-sm">
+                <p>&copy; 2025 Sage and Willow. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-sage-300 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-sage-300 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+
+            <p class="text-center text-white/30 text-xs mt-8">
+                Sage and Willow provides guidance and organization tools. We are not a law firm and do not provide legal advice. All legal documents should be reviewed by licensed professionals in your jurisdiction.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll reveal animations
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Particle canvas animation
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particles = [];
+        const particleCount = 50;
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.color = Math.random() > 0.5 ? '#9CAF88' : '#8B7355';
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+
+            // Draw connections between nearby particles
+            particles.forEach((p1, i) => {
+                particles.slice(i + 1).forEach(p2 => {
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = '#2C3E50';
+                        ctx.globalAlpha = (1 - distance / 100) * 0.1;
+                        ctx.stroke();
+                        ctx.globalAlpha = 1;
+                    }
+                });
+            });
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        animateParticles();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+
+</body>
+</html>

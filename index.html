@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sage and Willow | Plan Your Legacy Across Borders</title>
+    <meta name="description" content="End-of-life planning for Nigerian Canadians. Dual-jurisdiction estate planning, wills, and funeral services bridging Canada and Nigeria.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f6f7f4',
+                            100: '#e8ebe3',
+                            200: '#d4dac9',
+                            300: '#b5c0a4',
+                            400: '#9caf88',
+                            500: '#7a9362',
+                            600: '#5f754c',
+                            700: '#4b5c3e',
+                            800: '#3e4a34',
+                            900: '#353f2e',
+                        },
+                        willow: {
+                            50: '#faf8f6',
+                            100: '#f2ede8',
+                            200: '#e4dbd0',
+                            300: '#d2c3b1',
+                            400: '#bca68e',
+                            500: '#8b7355',
+                            600: '#7d6449',
+                            700: '#68523d',
+                            800: '#574436',
+                            900: '#4a3b2f',
+                        },
+                        cream: '#fdfbf7',
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans bg-cream text-willow-900 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-cream/95 backdrop-blur-sm z-50 border-b border-sage-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-sage-400 rounded-full flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-semibold text-willow-700">Sage & Willow</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-willow-600 hover:text-sage-600 transition">Services</a>
+                    <a href="#for-you" class="text-willow-600 hover:text-sage-600 transition">Is This For Me?</a>
+                    <a href="#why-us" class="text-willow-600 hover:text-sage-600 transition">Why Us</a>
+                    <a href="#waitlist" class="bg-sage-500 text-white px-5 py-2 rounded-lg hover:bg-sage-600 transition font-medium">Join Waitlist</a>
+                </div>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-sage-50">
+                    <svg class="w-6 h-6 text-willow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-sage-100 bg-cream">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#services" class="block text-willow-600 hover:text-sage-600">Services</a>
+                <a href="#for-you" class="block text-willow-600 hover:text-sage-600">Is This For Me?</a>
+                <a href="#why-us" class="block text-willow-600 hover:text-sage-600">Why Us</a>
+                <a href="#waitlist" class="block bg-sage-500 text-white px-5 py-2 rounded-lg text-center hover:bg-sage-600 font-medium">Join Waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-willow-800 leading-tight mb-6">
+                        Plan your legacy<br>
+                        <span class="text-sage-500">across borders</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-willow-600 mb-8 leading-relaxed">
+                        Estate planning designed for Nigerian Canadians. We bridge both worlds so your family is protected—here and home.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#waitlist" class="bg-sage-500 text-white px-8 py-4 rounded-lg hover:bg-sage-600 transition font-semibold text-center text-lg shadow-lg shadow-sage-500/25">
+                            Get Early Access
+                        </a>
+                        <a href="#survey" class="border-2 border-willow-300 text-willow-700 px-8 py-4 rounded-lg hover:border-sage-400 hover:text-sage-600 transition font-semibold text-center text-lg">
+                            Take Our Survey
+                        </a>
+                    </div>
+                    <p class="mt-6 text-sm text-willow-500">
+                        Launching Q1 2025 • Join 50+ on the waitlist
+                    </p>
+                </div>
+                <div class="hidden md:block">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-sage-200 rounded-3xl transform rotate-3"></div>
+                        <div class="relative bg-white rounded-3xl p-8 shadow-xl">
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-sage-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-willow-800">Canadian Will</p>
+                                        <p class="text-sm text-willow-500">Legally valid in all provinces</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-sage-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-willow-800">Nigerian Assets Protected</p>
+                                        <p class="text-sm text-willow-500">Coordinated dual-jurisdiction plan</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-sage-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-willow-800">Family Protected</p>
+                                        <p class="text-sm text-willow-500">Clear instructions, no disputes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Stats Section -->
+    <section class="py-16 md:py-24 bg-willow-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-willow-800 mb-4">
+                    Your hard work shouldn't disappear
+                </h2>
+                <p class="text-lg text-willow-600 max-w-2xl mx-auto">
+                    Without proper planning, the wealth you've built across two countries could be lost to legal battles, confusion, and family disputes.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-willow-100">
+                    <div class="text-4xl md:text-5xl font-bold text-sage-500 mb-2">70%</div>
+                    <p class="text-willow-600">of Nigerians die without wills</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-willow-100">
+                    <div class="text-4xl md:text-5xl font-bold text-sage-500 mb-2">58%</div>
+                    <p class="text-willow-600">of Canadians die intestate</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-willow-100">
+                    <div class="text-4xl md:text-5xl font-bold text-sage-500 mb-2">30%</div>
+                    <p class="text-willow-600">of Nigerian civil cases are inheritance disputes</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-willow-100">
+                    <div class="text-4xl md:text-5xl font-bold text-sage-500 mb-2">125K+</div>
+                    <p class="text-willow-600">Nigerian Canadians building lives across borders</p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-willow-800 rounded-2xl p-8 text-center">
+                <p class="text-xl md:text-2xl text-willow-100 font-medium">
+                    "I thought I had time. Then my uncle passed, and the family spent three years in court fighting over land in Lagos."
+                </p>
+                <p class="mt-4 text-willow-400">— A story we hear too often</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-willow-800 mb-4">
+                    Everything you need, in one place
+                </h2>
+                <p class="text-lg text-willow-600 max-w-2xl mx-auto">
+                    From digital organization to funeral planning, we handle the complexity so you don't have to.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-sage-100 hover:border-sage-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sage-200 transition">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-willow-800 mb-2">Digital Legacy Organization</h3>
+                    <p class="text-sm text-willow-600">Passwords, accounts, subscriptions—all documented and accessible to your loved ones.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-sage-100 hover:border-sage-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sage-200 transition">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-willow-800 mb-2">Asset Inventory</h3>
+                    <p class="text-sm text-willow-600">Complete inventory of your assets in Canada and Nigeria—property, accounts, investments.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-sage-100 hover:border-sage-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sage-200 transition">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-willow-800 mb-2">Will Drafting</h3>
+                    <p class="text-sm text-willow-600">Legally valid wills for both jurisdictions, coordinated to work together seamlessly.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl p-6 border border-sage-100 hover:border-sage-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sage-200 transition">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-willow-800 mb-2">Power of Attorney</h3>
+                    <p class="text-sm text-willow-600">Designate trusted individuals to make decisions if you're unable to.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl p-6 border border-sage-100 hover:border-sage-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sage-200 transition">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-willow-800 mb-2">Dual-Jurisdiction Planning</h3>
+                    <p class="text-sm text-willow-600">Navigate the legal complexities of assets in both Canada and Nigeria.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl p-6 border border-sage-100 hover:border-sage-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sage-200 transition">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-willow-800 mb-2">Cultural Burial Rites</h3>
+                    <p class="text-sm text-willow-600">Document your wishes for traditional ceremonies, repatriation, and burial preferences.</p>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="bg-white rounded-2xl p-6 border border-sage-100 hover:border-sage-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sage-200 transition">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-willow-800 mb-2">Prepaid Funeral Planning</h3>
+                    <p class="text-sm text-willow-600">Lock in today's prices and remove the financial burden from your family.</p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="bg-white rounded-2xl p-6 border border-sage-100 hover:border-sage-300 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sage-200 transition">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-willow-800 mb-2">Probate Guidance</h3>
+                    <p class="text-sm text-willow-600">Help your family navigate the estate settlement process when the time comes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For Section -->
+    <section id="for-you" class="py-16 md:py-24 bg-sage-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-willow-800 mb-4">
+                    Is this for me?
+                </h2>
+                <p class="text-lg text-willow-600 max-w-2xl mx-auto">
+                    Whether you're planning ahead or responding to a wake-up call, we meet you where you are.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Persona 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-sage-100">
+                    <div class="inline-block bg-sage-100 text-sage-700 px-4 py-1 rounded-full text-sm font-medium mb-4">
+                        Planning Ahead
+                    </div>
+                    <h3 class="text-2xl font-bold text-willow-800 mb-4">In your 30s-40s</h3>
+                    <ul class="space-y-3 text-willow-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-sage-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Just bought a home in Canada</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-sage-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>New parent thinking about the future</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-sage-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Family land or property back home</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-sage-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Want to get this "adulting" task done</span>
+                        </li>
+                    </ul>
+                    <p class="mt-6 text-willow-500 italic">"I know I should do this. I just don't know where to start."</p>
+                </div>
+
+                <!-- Persona 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-sage-100">
+                    <div class="inline-block bg-willow-100 text-willow-700 px-4 py-1 rounded-full text-sm font-medium mb-4">
+                        It's Time
+                    </div>
+                    <h3 class="text-2xl font-bold text-willow-800 mb-4">In your 60s-70s+</h3>
+                    <ul class="space-y-3 text-willow-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-sage-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Recent health concern or diagnosis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-sage-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Lost a friend or family member recently</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-sage-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Want to prevent the chaos you've seen</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-sage-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Existing will needs updating for both countries</span>
+                        </li>
+                    </ul>
+                    <p class="mt-6 text-willow-500 italic">"I've put this off long enough. My family deserves better."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-willow-800 mb-4">
+                    Why Sage & Willow?
+                </h2>
+                <p class="text-lg text-willow-600 max-w-2xl mx-auto">
+                    We're not just another online will service. We understand where you come from and where you're going.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-willow-800 mb-2">Cultural Competence</h3>
+                        <p class="text-willow-600">We understand Nigerian family dynamics, burial traditions, and the unique considerations of diaspora life. No awkward explanations needed.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-willow-800 mb-2">Dual-Jurisdiction Expertise</h3>
+                        <p class="text-willow-600">Most services stop at Canadian borders. We coordinate with Nigerian legal requirements so your entire estate is covered.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-willow-800 mb-2">Integrated Services</h3>
+                        <p class="text-willow-600">Digital legacy, wills, funeral planning—one relationship instead of juggling multiple providers. We guide you through the whole journey.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-willow-800 mb-2">Approachable Process</h3>
+                        <p class="text-willow-600">Estate planning should feel like opening a bank account—routine, not scary. We've designed our process to be warm, clear, and judgment-free.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survey CTA Section -->
+    <section id="survey" class="py-16 md:py-24 bg-sage-500">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Help us build the right service
+            </h2>
+            <p class="text-xl text-sage-100 mb-8 max-w-2xl mx-auto">
+                Take our 3-minute survey and help shape Sage & Willow. As a thank you, you'll get early access and a free planning guide.
+            </p>
+            <a href="https://tally.so/r/NpDZEG" target="_blank" class="inline-block bg-white text-sage-600 px-10 py-4 rounded-lg hover:bg-sage-50 transition font-semibold text-lg shadow-lg">
+                Take the Survey →
+            </a>
+            <p class="mt-6 text-sage-200 text-sm">
+                Your responses are confidential and help us serve you better.
+            </p>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-willow-800 mb-4">
+                Be the first to know
+            </h2>
+            <p class="text-lg text-willow-600 mb-8">
+                Join our waitlist for early access when we launch in Q1 2025. No spam, just updates that matter.
+            </p>
+
+            <!-- Tally Form Embed -->
+            <iframe
+                data-tally-src="https://tally.so/embed/NpDZEG?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy"
+                width="100%"
+                height="400"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                title="Sage and Willow Survey"
+                class="rounded-xl"
+            ></iframe>
+            <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s)}</script>
+
+            <p class="mt-6 text-sm text-willow-500">
+                Takes 3 minutes. Your responses help us build the right service.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-willow-800 text-willow-200 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-sage-400 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-semibold text-white">Sage & Willow</span>
+                    </div>
+                    <p class="text-willow-400">
+                        Estate planning for Nigerian Canadians.<br>
+                        Bridging both worlds.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="hover:text-sage-300 transition">Services</a></li>
+                        <li><a href="#for-you" class="hover:text-sage-300 transition">Is This For Me?</a></li>
+                        <li><a href="#why-us" class="hover:text-sage-300 transition">Why Us</a></li>
+                        <li><a href="#survey" class="hover:text-sage-300 transition">Take Survey</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="mailto:hello@sageandwillow.com" class="hover:text-sage-300 transition">
+                                hello@sageandwillow.com
+                            </a>
+                        </li>
+                        <li class="text-willow-400">Toronto, Canada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-willow-700 text-center text-willow-400 text-sm">
+                <p>&copy; 2025 Sage and Willow. All rights reserved.</p>
+                <p class="mt-2">
+                    <a href="#" class="hover:text-sage-300 transition">Privacy Policy</a>
+                    <span class="mx-2">•</span>
+                    <a href="#" class="hover:text-sage-300 transition">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
