@@ -317,7 +317,7 @@
 <body class="bg-cream text-indigo antialiased overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-sage-100/50">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-sage-100/50" role="navigation" aria-label="Main navigation">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="#" class="flex items-center gap-3 group">
@@ -342,8 +342,8 @@
                     </a>
                 </div>
 
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-sage-50 transition-colors">
-                    <svg class="w-6 h-6 text-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-sage-50 transition-colors" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-6 h-6 text-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
@@ -351,7 +351,7 @@
         </div>
 
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-sage-100">
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-sage-100" role="navigation" aria-label="Mobile navigation">
             <div class="px-6 py-4 space-y-3">
                 <a href="#companions" class="block text-indigo/70 hover:text-sage-600 font-medium py-2">Meet Your Guides</a>
                 <a href="#how-it-works" class="block text-indigo/70 hover:text-sage-600 font-medium py-2">How It Works</a>
@@ -1168,17 +1168,31 @@
                 </p>
 
                 <!-- Tally Survey Embed -->
-                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 max-w-lg mx-auto">
+                <div class="tally-embed-container relative bg-white/95 backdrop-blur-sm rounded-2xl p-6 max-w-lg mx-auto">
+                    <!-- Loading skeleton -->
+                    <div class="tally-loading absolute inset-0 flex items-center justify-center bg-white/50 rounded-xl" id="tally-loader-companion">
+                        <div class="animate-pulse text-gray-400">Loading survey...</div>
+                    </div>
+
                     <iframe
                         data-tally-src="https://tally.so/embed/NpDZEG?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                        loading="lazy"
                         width="100%"
-                        height="400"
+                        style="min-height: 400px"
                         frameborder="0"
                         marginheight="0"
                         marginwidth="0"
                         title="Sage and Willow Survey"
+                        onload="document.getElementById('tally-loader-companion').style.display='none'"
                     ></iframe>
+
+                    <!-- Fallback for no-JS -->
+                    <noscript>
+                        <p class="text-center py-4">
+                            <a href="https://tally.so/r/NpDZEG" target="_blank" class="text-sage-600 underline">
+                                Take our survey directly on Tally
+                            </a>
+                        </p>
+                    </noscript>
                     <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s)}</script>
                 </div>
 
